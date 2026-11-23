@@ -1,11 +1,9 @@
 let firstCard;
 let secondCard;
-
-let cards = [firstCard, secondCard];
-
+let cards = [];
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let message = "";
 
 let messageEl = document.getElementById("message-el");
@@ -53,10 +51,10 @@ function renderGame() {
 }
 
 function newCard() {
-  console.log("Drawing a new card from the deck!");
-  let card = getRandomCard();
-  sum += card;
-  cards.push(card);
-  console.log(cards);
-  renderGame();
+  if (isAlive === true && hasBlackJack === false) {
+    let card = getRandomCard();
+    sum += card;
+    cards.push(card);
+    renderGame();
+  }
 }
