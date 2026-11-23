@@ -1,3 +1,7 @@
+let player = {
+  name: "Steve",
+  chips: 150,
+};
 let firstCard;
 let secondCard;
 let cards = [];
@@ -10,6 +14,9 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 // let sumEl = document.querySelector("#sum-el");
 let cardsEl = document.getElementById("cards-el");
+let playerEl = document.getElementById("player-el");
+
+playerEl.textContent = player.name + ": " + player.chips;
 
 function getRandomCard() {
   let randomNumber = Math.floor(Math.random() * 13) + 1;
